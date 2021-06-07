@@ -6,3 +6,8 @@ RUN apt-get update \
     && pecl install ssh2-0.13 \
     && docker-php-ext-install gmp bcmath mcrypt \
     && docker-php-ext-enable ssh2
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" \
+    && mv composer.phar /usr/local/bin/composer \
+    && apt-get -y install git unzip
