@@ -2,7 +2,7 @@ FROM php:8.1
 
 RUN apt-get update \
     && apt-get -y install libgmp-dev libmcrypt-dev libssh2-1 libssh2-1-dev \
-    && pecl install mcrypt ssh2-1.3.1 \
+    && pecl install mcrypt-1.0.4 ssh2-1.3.1 \
     && docker-php-ext-install gmp bcmath \
     && docker-php-ext-enable mcrypt ssh2
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
