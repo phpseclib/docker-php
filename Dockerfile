@@ -1,4 +1,4 @@
-FROM php:8.1
+FROM php:8.2
 
 RUN apt-get update \
     && apt-get -y install libgmp-dev libmcrypt-dev libssh2-1 libssh2-1-dev \
